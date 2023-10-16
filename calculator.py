@@ -4,7 +4,7 @@ from tkinter import *
 # main window
 root = Tk()
 root.title("My Calculator")
-root.iconbitmap('C:\icons\icon.ico')
+#root.iconbitmap('C:\icons\icon.ico')
 
 #create an entry text field
 
@@ -72,7 +72,10 @@ def button_equal():
         e.insert(0, f_num - int(second_number))
 
     if math == "division":
-        e.insert(0, f_num / int(second_number))
+        if int(second_number) == 0:
+            e.insert(0, "division by 0 is not allowed")
+        else: 
+            e.insert(0, f_num / int(second_number))
 
     if math == "multiply":
         e.insert(0, f_num * int(second_number))
